@@ -12,9 +12,9 @@ confirm('Would you like to take a 5 question quiz about me?');
 var native = prompt('Am I a native of Seattle');
 native = native.toLowerCase();
 // console.log('User answer to native question ' + native);
-if (native == 'yes' || native == 'y') {
+if (native === 'yes' || native === 'y') {
   alert('Correct, I am a native of Seattle');
-} else if (native != 'yes' || native != 'y') {
+} else if (native !== 'yes' || native !== 'y') {
   console.log('User did not get \'Native of Seattle\' question correct?');
   alert('That is not correct, I am a native of Seattle');
 }
@@ -23,9 +23,9 @@ if (native == 'yes' || native == 'y') {
 var historyQuestion = prompt('Do you think I like history?');
 historyQuestion = historyQuestion.toLowerCase();
 // console.log('User response to history question = ' + historyQuestion);
-if (historyQuestion == 'yes' || historyQuestion == 'y') {
+if (historyQuestion === 'yes' || historyQuestion === 'y') {
   alert('Yes, I do like history');
-} else if (historyQuestion != 'yes' || historyQuestion == 'y') {
+} else if (historyQuestion !== 'yes' || historyQuestion === 'y') {
   alert('Actually I do like history');
 }
 
@@ -33,9 +33,9 @@ if (historyQuestion == 'yes' || historyQuestion == 'y') {
 var childrenQuestion = prompt('Do I have any children?');
 childrenQuestion = childrenQuestion.toLocaleLowerCase();
 // console.log('User response to children = ' + childrenQuestion);
-if (childrenQuestion == 'yes' || childrenQuestion == 'y') {
+if (childrenQuestion === 'yes' || childrenQuestion === 'y') {
   alert('Yes I do have children');
-} else if (childrenQuestion != 'yes' || childrenQuestion != 'y') {
+} else if (childrenQuestion !== 'yes' || childrenQuestion !== 'y') {
   alert('Actually I do have children.');
 }
 
@@ -43,9 +43,9 @@ if (childrenQuestion == 'yes' || childrenQuestion == 'y') {
 var physicalQuestion = prompt('Do I like to work out?');
 physicalQuestion = physicalQuestion.toLocaleLowerCase();
 // console.log('User response to physical excercise = ' + physicalQuestion);
-if (physicalQuestion == 'yes' || physicalQuestion == 'y') {
+if (physicalQuestion === 'yes' || physicalQuestion === 'y') {
   alert('Yes I love to work out!');
-} else if (physicalQuestion != 'yes' || physicalQuestion == 'y') {
+} else if (physicalQuestion !== 'yes' || physicalQuestion === 'y') {
   alert('Actually I like to work out.');
 }
 
@@ -53,9 +53,9 @@ if (physicalQuestion == 'yes' || physicalQuestion == 'y') {
 var chefQuestion = prompt('Am I a chef?');
 chefQuestion = chefQuestion.toLocaleLowerCase();
 // console.log('User response to chef question  = ' + chefQuestion);
-if (chefQuestion == 'no' || chefQuestion == 'n') {
+if (chefQuestion === 'no' || chefQuestion === 'n') {
   alert('Correct, I am not a chef but wish I was.');
-} else if (chefQuestion != 'no' || childrenQuestion != 'n') {
+} else if (chefQuestion !== 'no' || childrenQuestion !== 'n') {
   alert('Incorrect, I wish I was a chef.');
 }
 // Final message to User
