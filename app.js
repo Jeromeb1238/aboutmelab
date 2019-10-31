@@ -8,7 +8,7 @@ alert('Welcome ' + userName + ' to the site.');
 var totalCorrectAnswers = 0;
 
 // Start a 5 question yes/no quiz about me
-confirm('Would you like to take a 5 question quiz about me?');
+confirm('Would you like to take a quiz about me that has 7 questions?');
 
 // Question 1
 var native = prompt('Am I a native of Seattle');
