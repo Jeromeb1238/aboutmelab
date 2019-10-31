@@ -2,8 +2,6 @@
 
 // Ask user name and return a welcome msg w/ name
 var userName = prompt('Welcome to the site.  What is your name?');
-
-// console.log('User name is ' + userName);
 alert('Welcome ' + userName + ' to the site.');
 
 // declare var to count total correct answers
@@ -15,24 +13,23 @@ confirm('Would you like to take a 5 question quiz about me?');
 // Question 1
 var native = prompt('Am I a native of Seattle');
 native = native.toLowerCase();
-// console.log('User answer to native question ' + native);
+console.log('User answer to native question ' + native);
+
 if (native === 'yes' || native === 'y') {
   alert('Correct, I am a native of Seattle');
   totalCorrectAnswers++
-  console.log ('correct answers ' + totalCorrectAnswers);
 } else if (native !== 'yes' || native !== 'y') {
-  // console.log('User did not get \'Native of Seattle\' question correct?');
   alert('That is not correct, I am a native of Seattle');
 }
 
 // Question 2
 var historyQuestion = prompt('Do you think I like history?');
 historyQuestion = historyQuestion.toLowerCase();
-// console.log('User response to history question = ' + historyQuestion);
+console.log('User response to history question = ' + historyQuestion);
+
 if (historyQuestion === 'yes' || historyQuestion === 'y') {
   alert('Yes, I do like history');
   totalCorrectAnswers++
-  console.log ('correct answers ' + totalCorrectAnswers);
 } else if (historyQuestion !== 'yes' || historyQuestion === 'y') {
   alert('Actually I do like history');
 }
@@ -40,11 +37,11 @@ if (historyQuestion === 'yes' || historyQuestion === 'y') {
 // Question 3
 var childrenQuestion = prompt('Do I have any children?');
 childrenQuestion = childrenQuestion.toLocaleLowerCase();
-// console.log('User response to children = ' + childrenQuestion);
+console.log('User response to children = ' + childrenQuestion);
+
 if (childrenQuestion === 'yes' || childrenQuestion === 'y') {
   alert('Yes I do have children');
   totalCorrectAnswers++
-  console.log ('correct answers ' + totalCorrectAnswers);
 } else if (childrenQuestion !== 'yes' || childrenQuestion !== 'y') {
   alert('Actually I do have children.');
 }
@@ -52,7 +49,8 @@ if (childrenQuestion === 'yes' || childrenQuestion === 'y') {
 // Question 4
 var physicalQuestion = prompt('Do I like to work out?');
 physicalQuestion = physicalQuestion.toLocaleLowerCase();
-// console.log('User response to physical excercise = ' + physicalQuestion);
+console.log('User response to physical excercise = ' + physicalQuestion);
+
 if (physicalQuestion === 'yes' || physicalQuestion === 'y') {
   alert('Yes I love to work out!');
   totalCorrectAnswers++
@@ -63,7 +61,8 @@ if (physicalQuestion === 'yes' || physicalQuestion === 'y') {
 // Question 5
 var chefQuestion = prompt('Am I a chef?');
 chefQuestion = chefQuestion.toLocaleLowerCase();
-// console.log('User response to chef question  = ' + chefQuestion);
+console.log('User response to chef question  = ' + chefQuestion);
+
 if (chefQuestion === 'no' || chefQuestion === 'n') {
   alert('Correct, I am not a chef but wish I was.');
   totalCorrectAnswers++
@@ -90,20 +89,20 @@ for (var i = 1; i <= 4; i++) {
       alert('You are too low');
   }  
   if(i >= 4) {
-  alert('You have used all your guesses.  The correct answer is ' + numChildren);
+  alert('You have used all your guesses.  The correct answer is ' + numChildren + ' children.');
   }
 } 
 
-// Question 7 
+// Question 7 create a loop to check an answer to multiple possibilities and loop to restrict number of guesses
 var guessNumber = 1;
-var maxNumGuess = 3
+var maxNumGuess = 6
 var cityNames = ['athens', 'rome', 'barcelona'];
 var nameIsCorrect = false;
 alert('Question 7: Guess one of my favorite travel cities.');
 
 while (guessNumber <= maxNumGuess && !nameIsCorrect) {
   var nameAnswer = prompt('Guess a city.');
-  console.log(nameAnswer);
+  
   for (var i = 0; i < cityNames.length; i++) {
     if (nameAnswer.toLowerCase() === cityNames[i]) {
       alert('Wow, that is an excellent guess, yes ' + nameAnswer + ' is one of my favorite cities.');
