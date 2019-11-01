@@ -94,26 +94,39 @@ question5();
 // Question 6: Guess a number
 
 function question6() {
-  var numChildren = '6';
-  var guessPrompt = alert('You get 4 tries to guess how many children I have');
 
-  for (var i = 1; i <= 4; i++) {
-    var numGuess = prompt('Take a guess');
-    console.log('num guessed was ' + numGuess);
-    console.log('iteration count ' + i);
-    console.log('number of children ' + numChildren);
-    if (numGuess === numChildren) {
-      alert('That is correct, I have ' + ' children.');
-      totalCorrectAnswers++
-      break;
-    } else if (numGuess > numChildren) {
-      alert('You are too high');
-    } else if (numGuess < numChildren) {
-      alert('You are too low');
+// Generate a random number between 1 - 10
+  function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+  }
+  var answer = getRandomInt(1, 11);
+  console.log(answer);
+  
+  // set number of guesses and initial user prompt
+  var numTries = 3
+  alert('How many children do I have? Guess a number between 1 -10.  You get ' + numTries + ' tries.');
+  
+  // Set up for loop to evaluate guessInput, respond if correct, high, or low
+  for (var guessNumber = 1; guessNumber <= numTries; guessNumber++) {
+    var guessInput = prompt('guess a number');
+    var guessAnswer = Number(guessInput);
+    console.log('guess answer ' + guessAnswer);
+  
+      if (guessAnswer === answer) {
+        alert('Outstanding, yes, I have ' + guessAnswer + ' children is correct!!!');
+        totalCorrectAnswers++
+        break;
+      } else if (guessAnswer > answer) {
+        alert('too high');
+      } else if (guessAnswer < answer) {
+        alert('too low');
+      }
     }
-    if (i >= 4) {
-      alert('You have used all your guesses.  The correct answer is ' + numChildren + ' children.');
-    }
+    // Response if user guesses exceed number of tries
+    if (guessNumber === numTries) {
+      alert('you are out of guesses, the correct answer is ' + answer);
   }
 }
 question6();
@@ -125,7 +138,7 @@ function question7() {
   var maxNumGuess = 6
   var cityNames = ['athens', 'rome', 'barcelona'];
   var nameIsCorrect = false;
-  alert('Question 7: Guess one of my favorite travel cities.');
+  alert('Question 7: Guess one of my top 3 favorite travel cities.  You get ' + maxNumGuess + ' guesses.');
 
   while (guessNumber <= maxNumGuess && !nameIsCorrect) {
     var nameAnswer = prompt('Guess a city.');
