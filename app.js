@@ -8,7 +8,18 @@ alert('Welcome ' + userName + ' to the site.');
 var totalCorrectAnswers = 0;
 
 // Start a 7 question yes/no quiz about me
-confirm('Would you like to take a quiz about me that has 7 questions?');
+var confirm = confirm('Would you like to take a quiz about me that has 7 questions?');
+if(confirm) {
+  question1();
+  question2();
+  question3();
+  question4();
+  question5();
+  question6();
+  question7();
+} else {
+  alert("No quiz?!  Well I hope you enjoy the website");
+}
 
 // Question 1
 function question1() {
@@ -84,10 +95,12 @@ function question6() {
     return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
   }
   var answer = getRandomInt(1, 11);
-  console.log(answer);
+  console.log('answer = ' + answer);
+
   // set number of guesses and initial user prompt
   var numTries = 3
   alert('How many children do I have? Guess a number between 1 -10.  You get ' + numTries + ' tries.');
+
   // Set up for loop to evaluate guessInput, respond if correct, high, or low
   for (var guessNumber = 1; guessNumber <= numTries; guessNumber++) {
     var guessInput = prompt('guess a number');
@@ -102,12 +115,13 @@ function question6() {
       } else if (guessAnswer < answer) {
         alert('too low');
       }
+      if (guessNumber === numTries) {
+        alert('you are out of guesses, the correct answer is ' + answer);
     }
     // Response if user guesses exceed number of tries
-    if (guessNumber === numTries) {
-      alert('you are out of guesses, the correct answer is ' + answer);
   }
 }
+
 // Question 7 create a loop to check an answer to multiple possibilities and loop to restrict number of guesses
 function question7() {
   var guessNumber = 1;
@@ -127,7 +141,7 @@ function question7() {
       }
     }
     if (!nameIsCorrect) {
-      console.log('guess number ' + guessNumber + 'and max guess number is ' + maxNumGuess);
+      console.log('guess number ' + guessNumber + ' of ' + maxNumGuess);
       if (guessNumber === maxNumGuess) {
         var city = '';
         for (var i = 0; i < cityNames.length; i++) {
@@ -144,15 +158,9 @@ function question7() {
     }
   }
 }
-// Final message to User
-console.log('total correct answers ' + totalCorrectAnswers);
-alert('Thank you ' + userName + ' for taking the quiz.  You got ' + totalCorrectAnswers + ' answers correct out of a possible 7.');
+if(confirm) {
+  console.log('total correct answers ' + totalCorrectAnswers);
+  alert('Thank you ' + userName + ' for taking the quiz.  You got ' + totalCorrectAnswers + ' answers correct out of a possible 7.');
+}
 
-question1();
-question2();
-question3();
-question4();
-question5();
-question6();
-question7();
 
